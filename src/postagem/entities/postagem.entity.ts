@@ -1,26 +1,27 @@
-import { IsNotEmpty, MaxLength } from 'class-validator';
-import {
-  Column,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { IsNotEmpty } from "class-validator"
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
+import { Tema } from "../../tema/entities/tema.entity"
 
-@Entity({ name: 'tb_postagens' })
+@Entity({name: "tb_postagens"})
 export class Postagem {
-  @PrimaryGeneratedColumn()
-  id: number;
 
-  @IsNotEmpty({ message: 'O título é obrigatório.' })
-  @MaxLength(100, { message: 'O título deve ter no máximo 100 caracteres.' })
-  @Column({ length: 100, nullable: false })
-  titulo: string;
+    @PrimaryGeneratedColumn()    
+    id: number
 
-  @IsNotEmpty({ message: 'O texto é obrigatório.' })
-  @MaxLength(1000, { message: 'O texto deve ter no máximo 1000 caracteres.' })
-  @Column({ length: 1000, nullable: false })
-  texto: string;
+    @IsNotEmpty()
+    @Column({length: 100, nullable: false})
+    titulo: string
 
-  @UpdateDateColumn({ type: 'timestamp' })
-  data: Date;
+    @IsNotEmpty()
+    @Column({length: 1000, nullable: false})
+    texto: string
+
+    @UpdateDateColumn()
+    data: Date
+    
+    @ManyToOne(() => Tema, (tema) => tema.postagem, {
+        onDelete: "CASCADE"
+    })
+    tema: Tema
+
 }
