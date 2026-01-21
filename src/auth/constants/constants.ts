@@ -1,3 +1,4 @@
 export const jwtConstants = {
-    secret: 'b26ad6e3e243407247fa2e160d7d4e83ded59752d0254df4fe2fee1418d3456c',
+    secret: '3e243407247fa2e160d7d4e83ded59752d0254df4fe2fee1418d3456c',
 };
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJpYXQiOjE3NjkwMDM3OTMsImV4cCI6MTc2OTAwNzM5M30.BsXScEBDZd28R0dwa36LQbm3in9gnq0_45e8dM25Xks
