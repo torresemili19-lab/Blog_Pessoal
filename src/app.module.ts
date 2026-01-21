@@ -6,7 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { PostagemModule } from './postagem/postagem.modules';
 import { TemaModule } from './tema/tema.modules';
 import { UsuarioModule } from './usuario/usuario.module';
-import { ProdService } from './data/services/prod.service';
+import { ProdService} from './data/services/prod.service';
 
 @Module({
   imports: [
